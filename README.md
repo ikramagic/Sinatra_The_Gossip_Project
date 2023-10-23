@@ -11,9 +11,8 @@ Gemfile.lock
 config.ru :
     Ce fichier config.ru qui contient les informations nécessaires au lancement de notre serveur.
     On y demande simplement au serveur d'exécuter le contenu de la classe ApplicationController.
-    
-├── db
-└── gossip.csv
+
+├── db/gossip.csv
     Il s'agit de notre base de données, un fichier csv qui stockera les potins et servira pour la navigation.
 
     └── lib
