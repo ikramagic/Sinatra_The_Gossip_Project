@@ -15,7 +15,6 @@ racine_du_projet
     ├── db
 │   └── gossip.csv
     Il s'agit de notre base de données, un fichier csv qui stockera les potins et servira pour la navigation.
-
     └── lib
     ├── controller.rb
     Il coordonne les GET et les POST. Un GET servira à récupérer et afficher une page HTML, là où un POST va plutôt gérer l'envoi de données vers une page HTML.
