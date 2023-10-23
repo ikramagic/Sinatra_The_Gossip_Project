@@ -4,12 +4,14 @@ Voici un projet qui utilise Sinatra, un framework minimaliste de Ruby.
 
 Voici ce que vous trouverez dans ce repo.
 
-├── Gemfile 
+Gemfile :
     On utilisera principalement la gem 'sinatra' pour le framework, la gem 'puma' pour le serveur, la gem 'csv' pour pouvoir utiliser une base de données, et la gem 'pry' pour le débugage.
-├── Gemfile.lock
-├── config.ru
+Gemfile.lock
+
+config.ru :
     Ce fichier config.ru qui contient les informations nécessaires au lancement de notre serveur.
     On y demande simplement au serveur d'exécuter le contenu de la classe ApplicationController.
+    
 ├── db
 └── gossip.csv
     Il s'agit de notre base de données, un fichier csv qui stockera les potins et servira pour la navigation.
