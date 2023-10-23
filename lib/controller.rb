@@ -15,13 +15,15 @@ class ApplicationController < Sinatra::Base
         redirect '/'
     end
 
-    get '/gossips/all' do
-        erb :all_gossips, locals: {gossips: Gossip.all}
+    get '/gossips/all' do #indique l'URL
+        erb :all_gossips, locals: {gossips: Gossip.all} #on met all_gossips.erb dedans, on lui indique où trouver les variables qu'on y utilisera
     end
 
     get '/gossips/:id' do
-    index = params[:id].to_i #on indique que la variable index sera égale au chiffre qui sera trouvé dans l'URL
+    index = params[:id].to_i 
+    #on indique que la variable index sera égale au chiffre qui sera trouvé dans l'URL
     @element = Gossip.all[index] 
-        erb :show
+    #utilise l'index pour accéder à un potin spécifique qui se trouve dans notre array all_gossips dans la méthode all
+        erb :show #on demande l'affichage du tout en HTML qui se trouve dans le .erb nommé show
     end
 end
