@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tous les potins</title>
+</head>
+<body>
+<h1>Voici tous les gossips :</h1>
+<% gossips.each_with_index do |gossip, index| %>
+    <p>
+      <a href="/gossips/<%= index%>"><%= gossip.author %><br/>
+      <%= gossip.content %>
+      </a>
+    </p>
+  <% end %>  
+  </body>
+</html>
