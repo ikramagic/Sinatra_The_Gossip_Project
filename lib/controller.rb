@@ -26,4 +26,14 @@ class ApplicationController < Sinatra::Base
     #utilise l'index pour accéder à un potin spécifique qui se trouve dans notre array all_gossips dans la méthode all
         erb :show #on demande l'affichage du tout en HTML qui se trouve dans le .erb nommé show
     end
+
+    get '/gossips/:id/edit' do
+    index = params[:id].to_i #pensez à bien indiquer le params dans le .erb pour que ça trouve bien le chemin
+    erb :edit
+    end
+
+    post '/gossips/:id/edit' do
+    id = params[:id].to_i
+    Gossip.new(params["gossip_author_edit"], params["gossip_content_edit"]).update
+    end
 end

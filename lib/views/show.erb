@@ -3,10 +3,11 @@
 <head>
   <title>PAGE DU POTIN</title>
 </head>
-<body>
+<body style="background-color: rgb(173, 216, 230);">
   <h1>Voici la page du potin n°<%= params[:id].to_i + 1 %></h1>
   <p>Son auteur : <%= @element.author %></p>
   <p>Le contenu du potin : <%= @element.content %></p>
+  <a href="/gossips/<%= params[:id].to_i%>/edit">Lien pour modifier le potin.</a>
   <a href="/gossips/all">Lien pour revenir à la page où il y a tous les potins</a>
   <a href="/">Lien pour revenir à la page de démarrage.</a>
 </body>

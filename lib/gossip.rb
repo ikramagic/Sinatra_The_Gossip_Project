@@ -10,7 +10,7 @@ class Gossip
     end
 
     def save
-        CSV.open("db/gossip.csv", "ab") do |stored| #ab ou a+ à peu de choses près la meme, juste ab + compatible
+        CSV.open("db/gossip.csv", "ab") do |stored|
         stored << [@author, @content] 
         end
     end
@@ -28,4 +28,22 @@ class Gossip
         end
         return all_gossips
     end
+
+    def update
+        data_base_reused = 'db/gossip.csv'
+        full_data_base_reused = CSV.read(data_base_reused)
+
+        new_author = params["gossip_author_edit"]
+        new_content = params["gossip_content_edit"]
+
+        if row[0].to_i == id
+            row[1] = new_author  
+            row[2] = new_content
+        end
+
+        CSV.open(full_data_base_reused, 'w') do |refill_csv|
+          refill_csv << full_data_base_reused[0]
+          full_data_base_reused.each { |row| refill_csv << row }
+        end
+    end      
 end
