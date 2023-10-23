@@ -6,7 +6,7 @@ class Gossip
 
     def initialize(author, content)
         @author = author
-        @content = gossip
+        @content = content
     end
     def save
         CSV.open("db/gossip.csv", "ab") do |stored| #ab ou a+ à peu de choses près la meme, juste ab + compatible
